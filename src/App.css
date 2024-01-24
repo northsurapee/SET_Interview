@@ -24,6 +24,10 @@ button {
   letter-spacing: 1px;
 }
 
+button:hover {
+  opacity: 0.7;
+}
+
 #start-button {
   background-color: dodgerblue;
 }

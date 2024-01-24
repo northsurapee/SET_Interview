@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Timer from "./Timer";
 import Setter from "./Setter";
@@ -5,6 +6,7 @@ import "./App.css";
 
 function App() {
   // STATES
+  const [isEnd, setEnd] = useState(false);
   const [isRun, setIsRun] = useState(false);
   const [isReset, setReset] = useState(true);
   const [time, setTime] = useState({
@@ -15,8 +17,10 @@ function App() {
 
   // TIMER CONTROLLER
   const startTimer = () => {
+    if (time.sec === 0 && time.min === 0 && time.hour === 0) return;
     setIsRun(true);
     setReset(false);
+    setEnd(false);
   };
 
   const pauseTimer = () => {
@@ -41,7 +45,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>(( REACT COUNTDOWN ))</h1>
+      {isEnd ? <h1>(( Time's up! ))</h1> : <h1>(( REACT COUNTDOWN ))</h1>}
+
       <Setter time={time} onChange={onSetterChange} />
       <div className="button-container">
         <button onClick={startTimer} id="start-button">
@@ -54,7 +59,14 @@ function App() {
           reset
         </button>
       </div>
-      <Timer time={time} isRun={isRun} isReset={isReset} isStart={isRun} />
+      <Timer
+        time={time}
+        isRun={isRun}
+        isReset={isReset}
+        isStart={isRun}
+        resetTimer={resetTimer}
+        setEnd={setEnd}
+      />
     </div>
   );
 }

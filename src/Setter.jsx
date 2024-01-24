@@ -12,6 +12,7 @@ export default function Setter({ time, onChange }) {
           placeholder="0"
           value={time.hour}
           onChange={onChange}
+          min={0}
         />
       </div>
       <div className="setter">
@@ -22,6 +23,8 @@ export default function Setter({ time, onChange }) {
           placeholder="0"
           value={time.min}
           onChange={onChange}
+          min={0}
+          max={60}
         />
       </div>
       <div className="setter">
@@ -32,6 +35,8 @@ export default function Setter({ time, onChange }) {
           placeholder="0"
           value={time.sec}
           onChange={onChange}
+          min={0}
+          max={60}
         />
       </div>
     </div>
