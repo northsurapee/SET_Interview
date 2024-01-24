@@ -1,0 +1,37 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+h1 {
+  letter-spacing: 13px;
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  gap: 30px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+#start-button {
+  background-color: dodgerblue;
+}
+
+#stop-button {
+  background-color: red;
+}
+
+#reset-button {
+  background-color: green;
+}

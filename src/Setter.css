@@ -1,0 +1,21 @@
+.setter-container {
+  display: flex;
+  gap: 20px;
+}
+
+.setter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.setter input {
+  height: 30px;
+  width: 40px;
+  padding: 3px 5px;
+  border: 1px solid lightgray;
+  color: gray;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 16px;
+}

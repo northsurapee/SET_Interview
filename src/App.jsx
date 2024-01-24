@@ -1,4 +1,4 @@
-import {useState } from "react";
+import { useState } from "react";
 import Timer from "./Timer";
 import Setter from "./Setter";
 import "./App.css";
@@ -10,7 +10,7 @@ function App() {
   const [time, setTime] = useState({
     sec: 0,
     min: 0,
-    hour: 0
+    hour: 0,
   });
 
   // TIMER CONTROLLER
@@ -34,29 +34,27 @@ function App() {
     setTime((prevTime) => {
       return {
         ...prevTime,
-        [name]:[value]
-      }
+        [name]: [value],
+      };
     });
   }
 
   return (
     <div className="app-container">
       <h1>(( REACT COUNTDOWN ))</h1>
-      <Setter 
-        time = {time}
-        onChange= {onSetterChange}
-      />
-      <Timer 
-        time = {time}
-        isRunning = {isRun}
-        isReset = {isReset}
-        isStart = {isRun}
-      />
+      <Setter time={time} onChange={onSetterChange} />
       <div className="button-container">
-        <button onClick={startTimer}>Start</button>
-        <button onClick={pauseTimer}>Pause</button>
-        <button onClick={resetTimer}>Reset</button>
+        <button onClick={startTimer} id="start-button">
+          start
+        </button>
+        <button onClick={pauseTimer} id="stop-button">
+          stop
+        </button>
+        <button onClick={resetTimer} id="reset-button">
+          reset
+        </button>
       </div>
+      <Timer time={time} isRun={isRun} isReset={isReset} isStart={isRun} />
     </div>
   );
 }
